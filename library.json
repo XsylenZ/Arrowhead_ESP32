@@ -1,0 +1,28 @@
+{
+  "name": "Arrowhead_ESP32",
+  "keywords": "ArrowheadFramework http rest registration orchestration",
+  "description": "ESP32 Library for Arrowhead Framework Core 4.1.2",
+  "repository":
+  {
+    "type": "git",
+    "url": " https://github.com/XsylenZ/Arrowhead_ESP32.git"
+  },
+  "authors":
+  [
+    {
+      "name": "Nick van Riet",
+      "email": "Nick.v.Riet@gmail.com",
+      "url": "http://www.nickyvanriet.nl",
+      "maintainer": true
+    }
+  ],
+  "dependencies":
+  {
+    "name": "ArduinoJson",
+    "authors": "Benoit Blanchon",
+    "frameworks": "arduino"
+  },
+  "version": "1.0",
+  "frameworks": "arduino",
+  "platforms": "ESP32"
+}

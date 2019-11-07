@@ -13,7 +13,7 @@
 #include <ArduinoJson.h>
 #include <HTTPClient.h>
 #include "HttpHandler.h"
-#include "ArrowheadCore.h"
+#include "include/ArrowheadCore.h"
 
 const int kSixtySeconds = 60;
 
