@@ -10,7 +10,7 @@
 #ifndef ESP32_HTTPHANDLER_H
 #define ESP32_HTTPHANDLER_H
 
-#define DEBUG_HTTPHANDLER
+//#define DEBUG_HTTPHANDLER
 
 #include <HTTPClient.h>
 
