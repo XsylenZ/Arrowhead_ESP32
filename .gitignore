@@ -3,6 +3,8 @@
 .piolibdeps
 .idea
 platformio.ini
+.travis.yml
+.gitignore
 /lib
 /cmake-build*
 CMakeListsPrivate.txt
