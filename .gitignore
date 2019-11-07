@@ -8,3 +8,4 @@ platformio.ini
 /lib
 /cmake-build*
 CMakeListsPrivate.txt
+CMakeListsDev.txt
