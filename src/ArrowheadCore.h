@@ -2,7 +2,7 @@
  * Created by Nick van Riet on 7/11/19.
  * Copyright (c) 2019 Nick van Riet.
  * 
- * Released under the [License name] license: [Link to license]
+ * Released under the MIT license: license.md
  * 
  * [Information]
  */
