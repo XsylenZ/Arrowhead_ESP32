@@ -10,7 +10,7 @@
 #ifndef ESP32_ARROWHEADCORE_H
 #define ESP32_ARROWHEADCORE_H
 
-#define DEBUG_ARROWHEAD
+//#define DEBUG_ARROWHEAD
 
 #include <Arduino.h>
 
@@ -107,7 +107,7 @@ private:
     bool _serviceRegister( String serviceEntry );
     bool _serviceUnregister( String serviceEntry );
 
-    String _createEndpoint(String ip, int port, String url);
+    String _createEndpoint( String ip, int port, String url );
 
 };
 

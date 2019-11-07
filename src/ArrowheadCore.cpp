@@ -13,7 +13,7 @@
 #include <ArduinoJson.h>
 #include <HTTPClient.h>
 #include "HttpHandler.h"
-#include "include/ArrowheadCore.h"
+#include "ArrowheadCore.h"
 
 const int kSixtySeconds = 60;
 
@@ -222,7 +222,7 @@ bool ArrowheadCore::_serviceRegister( String serviceEntry )
     String endpoint = _createEndpoint( _kAddress, _ports.regisrty, "/serviceregistry/register" );
     String httpResponseMessage = "";
     HttpHandler httpHandler;
-    int httpResponseCode = httpHandler.send(endpoint,"application/json",POST,serviceEntry);
+    int httpResponseCode = httpHandler.send( endpoint, "application/json", POST, serviceEntry );
     httpResponseMessage = httpHandler.getResponse();
 
     Serial.print( "Registered to Service Registry with status code:" );
@@ -245,7 +245,7 @@ bool ArrowheadCore::_serviceRegister( String serviceEntry )
         {
             return false;
         }
-        httpResponseCode = httpHandler.send(endpoint,"application/json",POST,serviceEntry);
+        httpResponseCode = httpHandler.send( endpoint, "application/json", POST, serviceEntry );
         httpResponseMessage = httpHandler.getResponse();
         Serial.print( "Re-registered with status code:" );
         Serial.println( httpResponseCode );
@@ -272,7 +272,7 @@ bool ArrowheadCore::_serviceUnregister( String serviceEntry )
     String endpoint = _createEndpoint( _kAddress, _ports.regisrty, "/serviceregistry/remove" );
     String httpResponseMessage = "";
     HttpHandler httpHandler;
-    int httpResponseCode = httpHandler.send(endpoint,"application/json",PUT,serviceEntry);
+    int httpResponseCode = httpHandler.send( endpoint, "application/json", PUT, serviceEntry );
     httpResponseMessage = httpHandler.getResponse();
     Serial.print( "Removed previous entry with status code:" );
     Serial.println( httpResponseCode );
@@ -281,8 +281,6 @@ bool ArrowheadCore::_serviceUnregister( String serviceEntry )
     Serial.print( "Remove response:" );
     Serial.println( httpResponseMessage );
 #endif
-
-
 
     if ( httpResponseCode != HTTP_CODE_OK )
     {

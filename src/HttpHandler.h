@@ -10,6 +10,8 @@
 #ifndef ESP32_HTTPHANDLER_H
 #define ESP32_HTTPHANDLER_H
 
+//#define DEBUG_HTTPREST
+
 #include <HTTPClient.h>
 
 typedef enum
@@ -27,7 +29,7 @@ public:
     HttpHandler();
     int send( const String url, const String contentType, const HTTP_Method_t method,
               const String body );
-    int send( const String url, const String contentType, const HTTP_Method_t method);
+    int send( const String url, const String contentType, const HTTP_Method_t method );
     String getResponse();
     void setConnectionTimeOut( int connectionTimeOut );
     virtual ~HttpHandler();
