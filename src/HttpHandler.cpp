@@ -47,14 +47,14 @@ int HttpHandler::send( const String url, const String contentType, const HTTP_Me
 
     _response = httpClient.getString();
 
-#ifdef DEBUG_HTTPREST
-    Serial.println( "[DEBUG HttpRest] URL: " );
+#ifdef DEBUG_HTTPHANDLER
+    Serial.println( "[DEBUG HttpHandler] URL: " );
     Serial.println(url);
     Serial.println( "[DEBUG HttpRest] Body: " );
     Serial.println(body);
-    Serial.print( "[DEBUG HttpRest] HTTP Response code is: " );
+    Serial.print( "[DEBUG HttpHandler] HTTP Response code is: " );
     Serial.println( httpResponseCode );
-    Serial.println( "[DEBUG HttpRest] HTTP Response message is: " );
+    Serial.println( "[DEBUG HttpHandler] HTTP Response message is: " );
     Serial.println( _response );
 #endif
 

@@ -292,6 +292,6 @@ bool ArrowheadCore::_serviceUnregister( String serviceEntry )
 
 String ArrowheadCore::_createEndpoint( String ip, int port, String url )
 {
-    return String( ip + ":" + String( ip ) + url );
+    return String( ip + ":" + String( port ) + url );
 }
 
