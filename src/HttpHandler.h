@@ -36,7 +36,7 @@ public:
 
 private:
     String _response;
-    int _connectionTimeOut = 250;
+    int _connectionTimeOut = 500;
 };
 
 #endif //ESP32_HTTPHANDLER_H

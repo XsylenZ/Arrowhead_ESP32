@@ -24,7 +24,7 @@ int HttpHandler::send( const String url, const String contentType, const HTTP_Me
     _response = "";
 
     HTTPClient httpClient;
-//    httpClient.setConnectTimeout( _connectionTimeOut );
+    httpClient.setConnectTimeout( _connectionTimeOut );
     httpClient.begin( url );
     httpClient.addHeader( "Content-Type", contentType ); //Specify content-type header
 
@@ -32,20 +32,29 @@ int HttpHandler::send( const String url, const String contentType, const HTTP_Me
     switch ( method )
     {
         case POST:
-            httpResponseCode = httpClient.sendRequest( "POST", body );
+            httpResponseCode = httpClient.POST( body );
             break;
         case PUT:
-            httpResponseCode = httpClient.sendRequest( "PUT", body );
+            httpResponseCode = httpClient.PUT( body );
             break;
         case DELETE:
             httpResponseCode = httpClient.sendRequest( "DELETE", body );
             break;
         case GET:
-            httpResponseCode = httpClient.sendRequest( "GET" );
+            httpResponseCode = httpClient.GET();
             break;
     }
 
-    _response = httpClient.getString();
+    if ( httpResponseCode > 0 )
+    {
+        _response = httpClient.getString();
+    }
+
+    if ( httpResponseCode <= 0 )
+    {
+        Serial.println( "[DEBUG_HttpHandler_AHF] responseCode: " + String( httpResponseCode ) );
+    }
+
 
 #ifdef DEBUG_HTTPHANDLER
     Serial.println( "[DEBUG HttpHandler] URL: " );
@@ -64,8 +73,7 @@ int HttpHandler::send( const String url, const String contentType, const HTTP_Me
 
 int HttpHandler::send( const String url, const String contentType, const HTTP_Method_t method )
 {
-    String empty = "";
-    return send( url, contentType, method, empty );
+    return send( url, contentType, method, "" );
 }
 
 String HttpHandler::getResponse()
